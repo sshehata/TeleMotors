@@ -18,13 +18,13 @@
  */
 
 // pins for the LEDs:
-const int redPin = 3;
-const int greenPin = 5;
-const int bluePin = 6;
+int led = 13;
+int save = 100;
 
 void setup() {
   // initialize serial:
   Serial.begin(9600);
+  pinMode(led, OUTPUT);
   // make the pins outputs:
 
 }
@@ -33,8 +33,13 @@ void loop() {
   // if there's any serial available, read it:
   while (Serial.available() > 0) {
 
-    Serial.print(Serial.parseInt());
+    save = Serial.parseInt() * 10;
   }
+  
+  digitalWrite(led, HIGH);
+  delay(save);
+  digitalWrite(led, LOW);
+  delay(save);
 }
 
 
