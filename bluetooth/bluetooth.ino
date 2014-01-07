@@ -14,11 +14,6 @@ void setup() {
 
 void loop() {
   // if there's any serial available, read it:
-  while(Serial.available()){
-    char recv = Serial.read();
-    Serial1.print(recv);
-  }
-  
   while (Serial1.available() > 0) {
 
     save = Serial1.parseInt() * 10;

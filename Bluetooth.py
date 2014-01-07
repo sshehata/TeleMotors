@@ -7,8 +7,8 @@ Created on 6 Jan 2014
 from NeuroPy import NeuroPy
 import serial
 
-object1=NeuroPy("COM30") # Port connecting to Neurosky bluetooth
-ser = serial.Serial(24) # Port to send data on (to serial USB = 13 / Bluetooth shield = variable)
+object1=NeuroPy("COM32") # Port connecting to Neurosky bluetooth
+ser = serial.Serial(39) # Port to send data on (to serial USB = 13 / Bluetooth shield = variable)
 max = 5
 idx = max
 sum = 0
