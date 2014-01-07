@@ -7,9 +7,8 @@ Created on 6 Jan 2014
 from NeuroPy import NeuroPy
 import serial
 
-object1=NeuroPy("COM16") #If port not given 57600 is automatically assumed
-                        #object1=NeuroPy("/dev/rfcomm0") for linux
-ser = serial.Serial(12)
+object1=NeuroPy("COM30") # Port connecting to Neurosky bluetooth
+ser = serial.Serial(24) # Port to send data on (to serial USB = 13 / Bluetooth shield = variable)
 max = 5
 idx = max
 sum = 0
@@ -27,7 +26,7 @@ def attention_callback(attention_value):
         return None
     else:
         idx = max
-        print "Value of attention is", sum/max, "Value of blinking is", object1.blinkStrength, "Value of attention is ", object1.attention
+        print "Average value of attention is", sum/max
         #do other stuff (fire a rocket), based on the obtained value of attention_value
         #do some more stuff
         #ser.write(sum/max)
